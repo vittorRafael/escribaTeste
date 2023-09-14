@@ -1,34 +1,28 @@
 {
   "pessoas": [
     {
-      "nome": "Vittor Sales",
-      "cpf": "622.631.643-83",
-      "dataNascimento": "2002-05-25",
+      "nome": "Cliente 01",
+      "cpf": "000.000.000-00",
+      "dataNascimento": "1964-05-12",
+      "id": 1
+    },
+    {
+      "nome": "Cliente 02",
+      "cpf": "222.222.222-22",
+      "dataNascimento": "2001-01-05",
+      "id": 2
+    },
+    {
+      "nome": "Cliente 03",
+      "cpf": "333.333.333-33",
+      "dataNascimento": "1999-04-06",
       "id": 3
     },
     {
-      "nome": "Rafael Sales",
-      "cpf": "622.631.643-83",
-      "dataNascimento": "2023-09-14",
-      "id": 4
-    },
-    {
-      "nome": "Fonecedor 01 ",
+      "nome": "Cliente 04",
       "cpf": "000.000.000-00",
-      "dataNascimento": null,
-      "id": 5
-    },
-    {
-      "nome": "Rafael Pinho Sales",
-      "cpf": "111.111.111-11",
-      "dataNascimento": "2024-02-01",
-      "id": 6
-    },
-    {
-      "nome": "Silvia damasceno",
-      "cpf": "222.222.222-22",
-      "dataNascimento": "1959-05-28",
-      "id": 7
+      "dataNascimento": "2002-05-25",
+      "id": 4
     }
   ],
   "produtos": [

@@ -1,24 +1,28 @@
 # escribateste
 
-## Project setup
+## Instalar depedencias do projeto
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Iniciar servidor backend
+
+```
+npm run backend
+```
+
+### Iniciar projeto
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Tecnologias utilizadas
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- HTML
+- CSS
+- Javascript
+- Vue
+- Vue-router
+- Axios

@@ -1,13 +1,17 @@
 <template>
   <main>
-    <div v-if="!clientes" class="sem-clientes">
+    <div v-if="clientes.length == 0" class="sem-clientes">
       <h1>Não há clientes cadastrados no momento</h1>
       <router-link to="/novocliente"><span>+</span> Adicionar novo cliente</router-link>
     </div>
     <div v-else class="com-clientes">
-      <div v-show="msg" class="mensagem">{{ msg }}</div>
       <router-link to="/novocliente"><span>+</span> Adicionar novo cliente</router-link>
-      <TabelaComp :clientes="clientes" />
+      <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar" @change="pesquisar">
+      <TabelaComp :clientes="clientes" v-if="!pesquisa && clientesPesquisa.length === 0" />
+      <div v-else-if="clientesPesquisa.length === 0" class="sem-clientes">
+        <h1>Sem resultados!</h1>
+      </div>
+      <TabelaComp :clientes="clientesPesquisa" v-else />
     </div>
   </main>
 </template>
@@ -21,18 +25,22 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      clientes: null,
-    }
-  },
-  computed: {
-    msg() {
-      return this.$store.state.msg
+      clientes: [],
+      pesquisa: false,
+      clientesPesquisa: []
     }
   },
   methods: {
     getClientes() {
       axios.get("http://localhost:3000/pessoas").then((r) => this.clientes = r.data)
     },
+    pesquisar(e) {
+      this.pesquisa = true
+      this.clientesPesquisa = this.clientes.filter((cliente) => {
+        return cliente.nome.toLowerCase().includes(e.target.value.toLowerCase())
+      })
+      console.log(this.clientesPesquisa)
+    }
   },
   created() {
     this.getClientes();
@@ -87,6 +95,19 @@ a span {
 .mensagem {
   background-color: rgba(0, 100, 0, 0.4);
   color: #0a5c0a;
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Inter;
+}
+
+input:focus {
+  outline: 0;
+  border: 2px solid var(--amarelo);
 }
 
 @media (min-width: 700px) {

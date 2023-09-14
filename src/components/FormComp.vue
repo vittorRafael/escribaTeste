@@ -11,7 +11,7 @@
     </div>
     <div class="input-form">
       <label for="data">Data de Nascimento </label>
-      <input type="date" name="data" id="data" v-model="data">
+      <input type="date" name="data" id="data" v-model="data" max="2023-12-31" min="1950-12-31">
     </div>
     <button type="submit">Cadastrar</button>
   </form>
